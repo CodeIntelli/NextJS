@@ -1,5 +1,9 @@
 # NEXT JS TUTORIAL
 
+
+![NextJs Img](https://www.educative.io/v2api/editorpage/6452289848475648/image/5294398307303424)
+
+
 ## Topics That Are Covered In This Tutorial
 
 ```sh
