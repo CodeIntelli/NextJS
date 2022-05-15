@@ -1,8 +1,6 @@
 # NEXT JS TUTORIAL
 
-
 ![NextJs Img](https://www.educative.io/v2api/editorpage/6452289848475648/image/5294398307303424)
-
 
 ## Topics That Are Covered In This Tutorial
 
@@ -158,7 +156,42 @@ so, first it gone in
 
 # 6. Next.JS Understanding File Base Routing
 
+- So how is the routing in next.js app
+
+  - File-system based routing mechanism
+  - when a file is added to the pages folder in a project, by default all the files becomes available as a route.
+
+    - If we want to create routes just need to create files it automatically create routes of that file name route.
+
+    - If we are creating folder based routes then we can also create it but in that folder we must have to create index file. and under that folder we can add multiple pages that we want to add after routes.
+
+    ```sh
+
+    Folder Structure            Routes
+    home.js                     /home
+    contact.js                  /contact
+    blog/index.js               /blog
+    blog/blog-details.js        /blog/blog-details
+    blog/card/index.js          /blog/card
+    blog/card/title.js          /blog/card/title
+    ```
+
 # 7. Next.JS Nested File Based Routing
+
+- If we want to create routes just need to create files it automatically create routes of that file name route.
+
+- If we are creating folder based routes then we can also create it but in that folder we must have to create index file. and under that folder we can add multiple pages that we want to add after routes.
+
+```sh
+
+    Folder Structure            Routes
+    home.js                     /home
+    contact.js                  /contact
+    blog/index.js               /blog
+    blog/blog-details.js        /blog/blog-details
+    blog/card/index.js          /blog/card
+    blog/card/title.js          /blog/card/title
+```
 
 # 8. Next.JS Dynamic Routing
 
