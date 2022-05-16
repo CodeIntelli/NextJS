@@ -195,6 +195,40 @@ so, first it gone in
 
 # 8. Next.JS Dynamic Routing
 
+- As mentioned in the tutorial on static routing, Next.js defines routes based on the concept of pages.
+
+- What does that mean? Every Next.js project comes with a pages folder. The structure of the pages folder determines the structure of your routes and every file inside that folder maps to a route in your application.
+
+- Essentially, every time you want to create a route, you need to add a file in the pages folder. Keep in mind that the pages folder itself represents your root url (meaning /).
+
+- For static routing, you can create a new route by adding a index.js or a named file like about.js.
+
+```sh
+pages/index.js maps to /
+
+pages/about.js maps to /about
+```
+
+- But how does it work for dynamic routes? Say I wanted to create a blog, how would I add a route such as myblog.com/posts/:id?
+
+- Next.js handles dynamic routes by supporting brackets around parameters (e.g [id]) as a filename. Going back to my blog example, I would therefore create a [id].js file inside my posts folder.
+
+- As a result, /pages/posts/[id].js would map to /posts/[id] where id is the unique id of your post.
+
+```sh
+
+pages/
+│   index.js -> url: /
+│
+└───posts/
+     |  index.js  -> url: /posts
+     |
+     └─── [id]/
+             index.js       -> url: /posts/[id]
+             commentId.js   -> url: /posts/[id]/[commentId]
+
+```
+
 # 9. Link Component|Create Navbar without Page Refresh
 
 # 10. Creating Our Own Next.JS 404 Error Page
