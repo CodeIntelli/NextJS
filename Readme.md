@@ -20,7 +20,7 @@
 12. Next.JS Challenge No 2: Redirect to Home Page on Click|Events In Next.JS
 13. Next.JS Challenge No 3: Redirect 404 Page after 5 Sec|Hooks In Next.JS
 14. Understanding Next.JS Components
-15. Next.JS CSS lobal (External CSS)
+15. Next.JS CSS Global (External CSS)
 16. Next.JS CSS Module (Component-Level CSS)
 17. Next.JS CSS-in-JS(Inline Styling)
 18. What is Styled-JSX in Next.JS
