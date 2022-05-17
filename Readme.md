@@ -231,9 +231,31 @@ pages/
 
 # 9. Link Component|Create Navbar without Page Refresh
 
+- if we have to link component in next js we have to use next component which is provided by the nextjs. To use this component import this
+
+```sh
+
+import Link from 'next/link'
+
+```
+
+- we can use this as simple as we are using anchor tag in html
+
+```sh
+<Link href="your url">
+<a>Your Data Or Message Here</a>
+</Link>
+```
+
 # 10. Creating Our Own Next.JS 404 Error Page
 
+- Next.js by default provides 404 error page but if we have to change it then we have to create a file name 404.js in that specific code we have to mention the 404 page code. the file name must be 404.js if we are using another name then it might not be working.
+
+- So, design a 404 Page in HTML & CSS then put it into 404.js and that specific page will be display when we are calling any other url that are not present in application.
+
 # 11. Next.JS Challenge No 1: Link Error Page With Home Page
+
+- Here, we are simply using Link Component at error page if we click on that page it redirect us to home page
 
 # 12. Next.JS Challenge No 2: Redirect to Home Page on Click|Events In Next.JS
 
