@@ -258,24 +258,206 @@ import Link from 'next/link'
 - Here, we are simply using Link Component at error page if we click on that page it redirect us to home page
 
 # 12. Next.JS Challenge No 2: Redirect to Home Page on Click|Events In Next.JS
+```javascript
+import Link from "next/link";
+import {useRouter} from 'next/router';
+const Error = () => {
+  let router = useRouter();
+  let handleClick = ()=>{
+    router.push('/')
+  }
+  return (
+    <>
+      <div className="number">404</div>
+      <div className="text">
+        <span>Ooops...</span>
+        <br />
+        page not found
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        
+          <a
+          onClick={()=>{
+            router.push('/')
+          }}
+            className="text"
+            style={{
+              border: "2px solid #000",
+              padding: "10px",
+              color: "inherit",
+              textTransform: "none",
+              textDecoration: "none",
+              cursor:'pointer'
+            }}
+          >
+            Home(OnClick)
+          </a>
+        <a
+          onClick={handleClick}
+            className="text"
+            style={{
+              border: "2px solid #000",
+              padding: "10px",
+              marginLeft:'12px',
+              color: "inherit",
+              textTransform: "none",
+              textDecoration: "none",
+              cursor:'pointer'
+            }}
+          >
+            Home(using Function)
+          </a>
+      </div>
+    </>
+  );
+};
 
+export default Error;
+
+```
 # 13. Next.JS Challenge No 3: Redirect 404 Page after 5 Sec|Hooks In Next.JS
+```javascript
 
+// import "../styles/Error.module.css";
+import Link from "next/link";
+import {useRouter} from 'next/router';
+import { useEffect } from "react";
+const Error = () => {
+  let router = useRouter();
+  let handleClick = ()=>{
+    router.push('/')
+  }
+  useEffect(() => {
+    return () => {
+      setTimeout(()=>{
+        handleClick()
+      },2000)
+    }
+  }, [])
+  
+  return (
+    <>
+      <div className="number">404</div>
+      <div className="text">
+        <span>Ooops...</span>
+        <br />
+        page not found
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        
+      </div>
+    </>
+  );
+};
+
+export default Error;
+```
 # 14. Understanding Next.JS Components
 
-# 15. Next.JS CSS lobal (External CSS)
+- Similarly as react we have to create component where we can put all over component.
+ 
+# 15. Next.JS CSS Global (External CSS)
+
+- use styles/globals.css for using Global CSS
 
 # 16. Next.JS CSS Module (Component-Level CSS)
 
+- Use styles/Home.module.css for using component/moduele level CSS
+
 # 17. Next.JS CSS-in-JS(Inline Styling)
 
+- If we want to use inline css in our component use ``` style={{here will be your css code}}```. This is as similar like react
+
 # 18. What is Styled-JSX in Next.JS
+- If we want to use Styled-JSX in Next.JS just simply create like this 
+
+```javascript
+<style jsx>
+{
+`
+    h1{
+        color:red;
+    }
+`
+}
+</style>
+```
+
 
 # 19. Next.JS Image Component & Optimization
 
+- if we want to use image in Next.JS we need to Do Some Changes in next.config.js and the file in which we are using images
+
+```Next.config.js```
+
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  images:{
+    domains:['images.unsplash.com']
+  }
+}
+
+module.exports = nextConfig
+```
+
+- Add Domain Field in which the image will be comes from if we want to use external link other wise no need to do changes in next.config.js.
+
+```anyfile.html```
+
+```javascript
+import Image from 'next/image'
+export default function AnyFile(){
+    <Image src="https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWJvdXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500"  width={500} height={500} > 
+   </Image>
+} 
+```
+- Here, we must give image height width or layout otherwise it throw error.
+
 # 20. Next.JS Head Component & SEO
 
+- We expose a built-in component for appending elements to the head of the page:
+
+```javascript
+import Head from 'next/head'
+function IndexPage() {
+  return (
+    <div>
+      <Head>
+        <title>My page title</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <p>Hello world!</p>
+    </div>
+  )
+}
+export default IndexPage
+```
+
+- The contents of head get cleared upon unmounting the component, so make sure each page completely defines what it needs in head, without making assumptions about what other pages added.
+
+- title, meta or any other elements (e.g. script) need to be contained as direct children of the Head element, or wrapped into maximum one level of <React.Fragment> or arrays—otherwise the tags won't be correctly picked up on client-side navigations.
+
+- We recommend using next/script in your component instead of manually creating a <script> in next/head.
+
+- The Next.js Script component, next/script, is an extension of the HTML <script> element. It enables developers to set the loading priority of third-party scripts anywhere in their application, outside next/head, saving developer time while improving loading performance.
+
+```javascript
+import Script from 'next/script'
+export default function Home() {
+  return (
+    <>
+      <Script src="https://www.google-analytics.com/analytics.js" />
+    </>
+  )
+}
+```
+
+
 # 21. Rest API|Next.JS GetStaticProps() for Data Fetching
+
+
 
 # 22. Next.JS Challenge No 4: How to show only5Results while Fetching Data from API
 
